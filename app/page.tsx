@@ -8,7 +8,7 @@ import {
   Eye, 
   DollarSign, 
   Linkedin, 
-  Sun, // Ícone novo para o Hero
+  Sun,
   Users 
 } from 'lucide-react';
 
@@ -119,7 +119,8 @@ function QuemSomosPage() {
                 src="https://placehold.co/600x400/a3e635/1f2937?text=Instala%C3%A7%C3%A3o+Solar+Residencial"
                 alt="Instalação de painel solar em uma residência"
                 className="rounded-2xl shadow-xl w-full h-auto object-cover"
-                onError={(e) => { e.target.src = 'https://placehold.co/600x400/d1d5db/333?text=Imagem'; }}
+                // ⬇️ CORREÇÃO 1 AQUI ⬇️
+                onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/d1d5db/333?text=Imagem'; }}
               />
             </div>
             
@@ -169,7 +170,8 @@ function QuemSomosPage() {
                     src={member.imageUrl}
                     alt={`Foto de ${member.name}`}
                     className="rounded-full w-40 h-40 object-cover mx-auto mb-6 shadow-md"
-                    onError={(e) => { e.target.src = 'https://placehold.co/200x200/d1d5db/333?text=Foto'; }}
+                    // ⬇️ CORREÇÃO 2 AQUI ⬇️
+                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/200x200/d1d5db/333?text=Foto'; }}
                   />
                   <h3 className="text-2xl font-semibold text-slate-900">{member.name}</h3>
                   <p className="text-lime-600 font-medium mb-3">{member.role}</p>
